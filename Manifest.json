@@ -1,0 +1,8 @@
+{
+  "name": "Eco Collège",
+  "short_name": "Eco",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4CAF50"
+}
