@@ -1,1 +1,1 @@
-# Eco-college-test
+# Eco-college
