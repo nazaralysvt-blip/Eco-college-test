@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Eco Collège</title>
+<link rel="manifest" href="manifest.json">
+
+<style>
+body {
+  font-family: Arial;
+  margin: 20px;
+  background: #f4f9f4;
+}
+
+h1 {
+  color: #2e7d32;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🌱 Eco Collège</h1>
+
+<h2>📢 Actualités</h2>
+<div id="actus"></div>
+
+<h2>🌍 Actions</h2>
+<div id="actions"></div>
+
+<h2>⚖️ RGPD</h2>
+<p>Application pédagogique. Données limitées au prénom et à la classe, stockées localement.</p>
+
+<script src="app.js"></script>
+
+</body>
+</html>
