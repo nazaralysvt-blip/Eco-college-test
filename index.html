@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Eco Collège</title>
 <link rel="manifest" href="manifest.json">
-
 <style>
 body { font-family: Arial; margin:0; background:#f4f9f4; }
 header { background:#2e7d32; color:white; padding:10px; display:flex; justify-content:center; gap:20px; }
@@ -15,6 +14,8 @@ section { padding:15px; }
 button { background: #4CAF50; color:white; border:none; padding:8px; border-radius:5px; margin-top:5px; cursor:pointer; }
 button:hover { background:#388e3c; }
 #themes { margin-bottom:15px; }
+form { margin-top:15px; background:white; padding:10px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+form input, form select, form textarea { width: 100%; margin-bottom:5px; padding:5px; border-radius:5px; border:1px solid #ccc; }
 </style>
 </head>
 <body>
@@ -26,21 +27,50 @@ button:hover { background:#388e3c; }
 
 <section id="actus">
   <div id="themes">
-    <button onclick="filtrer('all')">Toutes</button>
-    <button onclick="filtrer('rucher')">Rucher 🐝</button>
-    <button onclick="filtrer('VAE')">VAE 🚴</button>
-    <button onclick="filtrer('plantation')">Plantation 🌱</button>
+    <button onclick="filtrerActualites('all')">Toutes</button>
+    <button onclick="filtrerActualites('rucher')">Rucher 🐝</button>
+    <button onclick="filtrerActualites('VAE')">VAE 🚴</button>
+    <button onclick="filtrerActualites('plantation')">Plantation 🌱</button>
   </div>
   <div id="contenuActus"></div>
+
+  <!-- Formulaire pour ajouter article (enseignant) -->
+  <form id="formActu">
+    <h3>Ajouter un article</h3>
+    <input type="text" id="titreActu" placeholder="Titre" required>
+    <textarea id="texteActu" placeholder="Texte" required></textarea>
+    <select id="themeActu">
+      <option value="rucher">Rucher 🐝</option>
+      <option value="VAE">VAE 🚴</option>
+      <option value="plantation">Plantation 🌱</option>
+      <option value="all">Toutes</option>
+    </select>
+    <button type="button" onclick="ajouterArticle()">Ajouter article</button>
+  </form>
 </section>
 
 <section id="actions" style="display:none;">
   <div id="contenuActions"></div>
+
+  <!-- Formulaire pour ajouter action (enseignant) -->
+  <form id="formAction">
+    <h3>Ajouter une action</h3>
+    <input type="text" id="nomAction" placeholder="Nom action" required>
+    <input type="date" id="dateAction" required>
+    <input type="number" id="placesAction" placeholder="Nombre de places" required>
+    <select id="themeAction">
+      <option value="rucher">Rucher 🐝</option>
+      <option value="VAE">VAE 🚴</option>
+      <option value="plantation">Plantation 🌱</option>
+      <option value="all">Toutes</option>
+    </select>
+    <button type="button" onclick="ajouterAction()">Ajouter action</button>
+  </form>
 </section>
 
 <section id="rgpd">
 <h2>⚖️ RGPD</h2>
-<p>Application pédagogique. Données limitées au prénom et à la classe, stockées localement sur le navigateur.</p>
+<p>Données limitées au prénom et à la classe, stockées localement sur le navigateur.</p>
 </section>
 
 <script src="app.js"></script>
