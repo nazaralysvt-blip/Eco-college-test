@@ -6,35 +6,43 @@
 <link rel="manifest" href="manifest.json">
 
 <style>
-body { font-family: Arial; margin: 20px; background: #f4f9f4; }
-h1 { color: #2e7d32; }
-.card { background: white; border-radius: 10px; padding: 15px; margin: 10px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-button { background: #4CAF50; color: white; border: none; padding: 8px; border-radius: 5px; margin: 5px; }
-button:hover { background: #388e3c; cursor: pointer; }
-#themes { margin-bottom: 15px; }
+body { font-family: Arial; margin:0; background:#f4f9f4; }
+header { background:#2e7d32; color:white; padding:10px; display:flex; justify-content:center; gap:20px; }
+header button { background: #4CAF50; border:none; color:white; padding:8px 12px; border-radius:5px; cursor:pointer; }
+header button:hover { background:#388e3c; }
+section { padding:15px; }
+.card { background:white; border-radius:10px; padding:15px; margin:10px 0; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+button { background: #4CAF50; color:white; border:none; padding:8px; border-radius:5px; margin-top:5px; cursor:pointer; }
+button:hover { background:#388e3c; }
+#themes { margin-bottom:15px; }
 </style>
 </head>
 <body>
 
-<h1>🌱 Eco Collège</h1>
+<header>
+  <button onclick="afficherSection('actus')">Actualités</button>
+  <button onclick="afficherSection('actions')">Actions</button>
+</header>
 
-<h2>📢 Actualités</h2>
-<div id="themes">
-  <button onclick="filtrer('all')">Toutes</button>
-  <button onclick="filtrer('rucher')">Rucher 🐝</button>
-  <button onclick="filtrer('VAE')">VAE 🚴</button>
-  <button onclick="filtrer('plantation')">Plantation 🌱</button>
-</div>
+<section id="actus">
+  <div id="themes">
+    <button onclick="filtrer('all')">Toutes</button>
+    <button onclick="filtrer('rucher')">Rucher 🐝</button>
+    <button onclick="filtrer('VAE')">VAE 🚴</button>
+    <button onclick="filtrer('plantation')">Plantation 🌱</button>
+  </div>
+  <div id="contenuActus"></div>
+</section>
 
-<div id="actus"></div>
+<section id="actions" style="display:none;">
+  <div id="contenuActions"></div>
+</section>
 
-<h2>🌍 Actions</h2>
-<div id="actions"></div>
-
+<section id="rgpd">
 <h2>⚖️ RGPD</h2>
-<p>Application pédagogique. Données limitées au prénom et à la classe, stockées localement.</p>
+<p>Application pédagogique. Données limitées au prénom et à la classe, stockées localement sur le navigateur.</p>
+</section>
 
 <script src="app.js"></script>
-
 </body>
 </html>
